@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wave Animation Header</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    body, html {
+        height: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+    .loader {
+        height: 350px;
+        width: 350px;
+        position: absolute;
+        margin: auto;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .loader div:nth-child(1) {
+        background-color: #dd1c4b;
+        height: 200px;
+        width: 125px;
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 40px;
+        right: 0;
+        transform: rotate(45deg);
+        border-radius: 100px 100px 10px 10px;
+        transform-origin: 50% 69%;
+        animation: flip1 4s linear infinite;
+    }
+    @keyframes flip1 {
+        25% {
+            transform: rotate(45deg) rotateX(180deg);
+        }
+        50% {
+            transform: rotate(45deg) rotateX(180deg);
+        }
+        75% {
+            transform: rotate(45deg);
+        }
+    }
+    .loader div:nth-child(2) {
+        height: 200px;
+        width: 125px;
+        background-color: #dd1c4b;
+        position: absolute;
+        top: 151px;
+        left: 132px;
+        transform: rotate(135deg);
+        transform-origin: 50% 31%;
+        border-radius: 10px 10px 100px 100px;
+        animation: flip2 4s 1s linear infinite;
+    }
+    @keyframes flip2 {
+        25% {
+            transform: rotate(135deg) rotateX(180deg);
+        }
+        50% {
+            transform: rotate(135deg) rotateX(180deg);
+        }
+        75% {
+            transform: rotate(135deg);
+        }
+    }
+    .hidden {
+        display: none;
+    }
+    header {
+        height: 100vh;
+        background:
+            url("https://gifdb.com/images/high/black-background-glitch-tuning-p8257c9synzrwsl7.gif") no-repeat center center;
+        background-size: cover;
+        background-blend-mode: overlay;
+        position: relative;
+        overflow: hidden;
+    }
+    #shape {
+        position: absolute;
+        left: 0;
+        bottom: -2vw;
+    }
+    img:not(#shape) {
+        position: absolute;
+        left: 0;
+    }
+    header img:nth-child(1) {
+        opacity: 0.4;
+        bottom: -0.1vw;
+        animation: move-1 5s infinite;
+    }
+    @keyframes move-1 {
+        50% {
+            transform: translateY(15px);
+        }
+    }
+    header img:nth-child(2) {
+        opacity: 0.3;
+        bottom: 0.5vw;
+        animation: move-2 4s infinite;
+    }
+    @keyframes move-2 {
+        50% {
+            transform: translateY(35px);
+        }
+    }
+    header img:nth-child(3) {
+        bottom: 0.3vw;
+        opacity: 0.2;
+        animation: move-3 3.5s infinite;
+    }
+    @keyframes move-3 {
+        50% {
+            transform: translateY(25px);
+        }
+    }
+    header img:nth-child(4) {
+        bottom: 0.1vw;
+        opacity: 0.3;
+        animation: move-4 3s infinite;
+    }
+    @keyframes move-4 {
+        50% {
+            transform: translateY(20px);
+        }
+    }
+    header h1 {
+        width: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 40%;
+        font-size: 8vmin;
+        text-align: center;
+        color: #ffffff;
+    }
+    header h2 {
+        width: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 50%;
+        font-size: 5vmin;
+        text-align: center;
+        color: #ffffff;
+    }
+    header h3 {
+        width: 100%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 60%;
+        font-size: 5vmin;
+        text-align: center;
+        color: #ffffff;
+    }
+    section p {
+        padding: 30px 35px;
+        margin-top: 50px;
+        text-align: justify;
+        line-height: 2em;
+        letter-spacing: 0.5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="loader">
+        <div></div>
+        <div></div>
+    </div>
+    <header class="hidden">
+        <img src="wave-1.svg" />
+        <img src="wave-2.svg" />
+        <img src="wave-3.svg" />
+        <img src="wave-4.svg" />
+        <img src="wave-5.svg" id="shape" />
+        <h1>HEALTH INFORMATICS</h1>
+        <h2>Applying information technology to healthcare systems</h2>
+        <h3>by Breana Claudette Q. Vismanos</h3>
+    </header>
+    <section class="hidden">
+        <p>ambot unsa ning health</p>
+    </section>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        window.addEventListener("load", function() {
+            document.querySelector(".loader").classList.add("hidden");
+            document.querySelector("header").classList.remove("hidden");
+            document.querySelector("section").classList.remove("hidden");
+        });
+    });
+    </script>
+</body>
+</html>
